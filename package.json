@@ -1,0 +1,31 @@
+{
+  "name": "webdriverioframework",
+  "version": "1.0.0",
+  "description": "WebDriverio Framework",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "wdio",
+    "allure": "./node_modules/.bin/allure generate  ./reports/allure-results --clean && allure open",
+    "createCSV": "node ./util/createBulkTemplateCSV.js"
+  },
+  "author": "David Munoz",
+  "license": "ISC",
+  "devDependencies": {
+    "allure-commandline": "^2.13.0",
+    "chai": "^4.2.0",
+    "del": "^4.1.1",
+    "dotenv": "^8.0.0",
+    "mocha": "^6.1.4",
+    "wdio-allure-reporter": "^0.8.3",
+    "wdio-dot-reporter": "0.0.10",
+    "wdio-junit-reporter": "^0.4.4",
+    "wdio-mocha-framework": "^0.5.13",
+    "webdriverio": "^4.13.2"
+  },
+  "dependencies": {
+    "fibers": "^3.1.1"
+  }
+}
