@@ -1,5 +1,13 @@
+# Description
+This repo contains a webdriverio javascript open source test automtation framework that automates creation of rally and jira work items for use in Rally-Jira Integration projects.
+* Automated browser tests to perform end to end functional testing of the LAC rally-Jira integration framework.
+* Includes a set of regression test cases that automates feature creation of integrated fields and asserts them in destination application (Rally or Jira).
+* Includes a test harness that allows users to define source and destination (can be Rally ART level , team level, Jira environments.) to drive automation tests.
+* Load Tests that simulate large bi-directional bulk loads for Rally-Jira. see SoapUI-LoadTest
+
+
 # Install Depedencies
-Pre Install JRE,Node 8.x using Chrome 77.0.3865.90 (Official Build) (64-bit) or higher
+Pre Install Java JRE, Node 8.x using Chrome 77.0.3865.90 (Official Build) (64-bit) or higher
 
 $ node -v --> v8.9.4
 
@@ -61,13 +69,13 @@ args: ['--headless','--disable-gpu']
 # Define entries for Rally-Jira instances as SOURCE/TARGET mappings.
 $ nano webdriverioFramework/config/credentials/dataSources.json
 
-# Test Case Configruations.
+# Test Configurations.
 $ touch .env
 
 * Open .env file and enter in the source and target values, API KEYS, etc as new lines in the form NAME=VALUE.  
-Example:
+Example:  
 SOURCE=rallyTest //Entries for SOURCE/TARGET mappings are defined in "\config\credentials\dataSources.json"  
-TARGET=testJira // Entries for SOURCE/TARGET mappings are defined in "\config\credentials\dataSources.json"    
+TARGET=testJira // Entries for SOURCE/TARGET mappings are defined in "\config\credentials\dataSources.json"     
 CSV=RALLY-CSV  // either "JIRA-CSV" or "RALLY-CSV"  
 BULKCOUNT=100 //Enter Number 100 to 500  
 RALLY_TIMEOUT=  //rally wdio waitUntil timeout interval in (ms)  
@@ -105,6 +113,19 @@ $ npm test -- --spec=tests/createFeatureBulk.js
 # Test Execution Reports
 * Running Allure Reports, After test execution, the below command will parse an XML (created in /reports/allure-results) and display an HTML style report in the browser.  
 $ npm run allure  
+
+# SoapUI-LoadTest
+* Install SOAP UI or Ready API software
+* Import Stress Test Project
+Select File > Import Project > Specify the .xml project file. > Click Open.  
+Open Git Bash. Create a Folder Directory $ mkdir /c/stressTest  
+Update API Keys for Rally and Jira  
+Execute Ready API Tests.  
+
+* Project Preferences
+HTTP > Socket timeout(ms) > Set to 750000  (To Resolve Java Socket Timeout Issue when running Large SOAP UI Tests)
+Close Connections after request (For running Large Load UI Tests).
+
 
 # Troubleshooting
 * Web Driverio does not run on my MAC?
