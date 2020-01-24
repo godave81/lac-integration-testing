@@ -6,7 +6,7 @@ This repo contains a webdriverio javascript open source test automtation framewo
 * Load Tests that simulate large bi-directional bulk loads for Rally-Jira. see SoapUI-LoadTest
 
 
-# Install Depedencies
+# Install Dependencies
 Pre Install Java JRE, Node 8.x using Chrome 77.0.3865.90 (Official Build) (64-bit) or higher
 
 $ node -v --> v8.9.4
