@@ -1,8 +1,8 @@
 # Description
-This repo contains a webdriverio javascript open source test automtation framework that automates creation of rally and jira work items for use in Rally-Jira Integration projects.
+This repo contains a webdriverio javascript open source test automation framework that automates creation of rally and jira work items for use in Rally-Jira Integration projects.
 * Automated browser tests to perform end to end functional testing of the LAC rally-Jira integration framework.
 * Includes a set of regression test cases that automates feature creation of integrated fields and asserts them in destination application (Rally or Jira).
-* Includes a test harness that allows users to define source and destination (can be Rally ART level , team level, Jira environments.) to drive automation tests.
+* Includes a test harness that allows users to define source and destination (can be Rally ART level , team level, Jira environments,etc) to drive automation tests.
 * Load Tests that simulate large bi-directional bulk loads for Rally-Jira. see SoapUI-LoadTest
 
 
