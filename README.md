@@ -3,7 +3,7 @@ This repo contains a webdriverio javascript open source test automation framewor
 * Automated browser tests to perform end to end functional testing of the LAC rally-Jira integration framework.
 * Includes a set of regression test cases that automates feature creation of integrated fields and asserts them in destination application (Rally or Jira).
 * Includes a test harness that allows users to define source and destination (can be Rally ART level , team level, Jira environments,etc) to drive automation tests.
-* Load Tests that simulate large bi-directional bulk loads for Rally-Jira. see SoapUI-LoadTest
+* Load Tests that simulate large bi-directional bulk loads for Rally-Jira. see BlazeMeter Load Tests.
 
 
 # Install Dependencies
@@ -114,17 +114,8 @@ $ npm test -- --spec=tests/createFeatureBulk.js
 * Running Allure Reports, After test execution, the below command will parse an XML (created in /reports/allure-results) and display an HTML style report in the browser.  
 $ npm run allure  
 
-# SoapUI-LoadTest
-* Install SOAP UI or Ready API software
-* Import Stress Test Project
-Select File > Import Project > Specify the .xml project file. > Click Open.  
-Open Git Bash. Create a Folder Directory $ mkdir /c/stressTest  
-Update API Keys for Rally and Jira  
-Execute Ready API Tests.  
-
-* Project Preferences
-HTTP > Socket timeout(ms) > Set to 750000  (To Resolve Java Socket Timeout Issue when running Large SOAP UI Tests)
-Close Connections after request (For running Large Load UI Tests).
+# BlazeMeter-LoadTest
+https://guide.blazemeter.com/hc/en-us/articles/360000074169-How-to-Convert-LoadRunner-or-SOAPUI-to-Open-Source-with-ShiftLeft-Converter
 
 
 # Troubleshooting
